@@ -1,0 +1,9 @@
+{
+  "intro": {
+    "text": "You stand in the ruins of old code. The hum of the mainframe echoes far away.",
+    "choices": {
+      "explore": "Explore the broken codebase.",
+      "sleep": "Wait. Maybe the system will reboot itself."
+    }
+  }
+}
