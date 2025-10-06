@@ -2,8 +2,32 @@
   "intro": {
     "text": "You stand in the ruins of old code. The hum of the mainframe echoes far away.",
     "choices": {
-      "explore": "Explore the broken codebase.",
-      "sleep": "Wait. Maybe the system will reboot itself."
+      "explore": "hallway",
+      "sleep": "sleep_room"
     }
+  },
+  "hallway": {
+    "text": "You step into a dimly lit hallway, wires dangling from the ceiling. Something moves in the shadows.",
+    "choices": {
+      "investigate": "glitch_room",
+      "run back": "intro"
+    }
+  },
+  "sleep_room": {
+    "text": "You lay down on a cold, metallic bed. The system hums lullabies as your vision blurs.",
+    "choices": {
+      "wake up": "intro"
+    }
+  },
+  "glitch_room": {
+    "text": "A wall of corrupted code pulses before you. Data leaks like smoke into the void.",
+    "choices": {
+      "touch": "system_core",
+      "retreat": "hallway"
+    }
+  },
+  "system_core": {
+    "text": "You enter the core of the system. Everything seems alive. Your choices ripple through it.",
+    "choices": {}
   }
 }
