@@ -1,33 +1,123 @@
 {
+  "meta": {
+    "title": "ByteVile: Echoes of the Mainframe",
+    "author": "Lone-Dev-X",
+    "description": "An interactive micro-story set inside a sentient codebase. Choices shape endings."
+  },
+
   "intro": {
-    "text": "You stand in the ruins of old code. The hum of the mainframe echoes far away.",
+    "text": "You wake to the distant hum of a mainframe. Neon glyphs crawl the walls and the air tastes faintly of burnt circuits. A single terminal flickers nearby.",
     "choices": {
-      "explore": "hallway",
-      "sleep": "sleep_room"
+      "approach terminal": "terminal",
+      "step outside": "ruins_alley"
     }
   },
-  "hallway": {
-    "text": "You step into a dimly lit hallway, wires dangling from the ceiling. Something moves in the shadows.",
+
+  "terminal": {
+    "text": "Lines of half-formed code scroll like falling rain. One line pulses brighter than the rest: `INIT: REMEMBER`.",
     "choices": {
-      "investigate": "glitch_room",
-      "run back": "intro"
+      "read": "memory_hall",
+      "ignore": "ruins_alley"
     }
   },
-  "sleep_room": {
-    "text": "You lay down on a cold, metallic bed. The system hums lullabies as your vision blurs.",
+
+  "ruins_alley": {
+    "text": "The alley smells of ozone. Broken drones nest in cracked gutters. A shadow moves with purpose — a small, lantern-eyed construct named Vire.",
     "choices": {
-      "wake up": "intro"
+      "follow Vire": "market",
+      "search debris": "scrap_heap"
     }
   },
-  "glitch_room": {
-    "text": "A wall of corrupted code pulses before you. Data leaks like smoke into the void.",
+
+  "memory_hall": {
+    "text": "You touch the pulsing line and a corridor of memories opens: laughter streams in binary, a child's voice asks about sunlight, and a warning repeats — 'Do not wake the kernel.'",
     "choices": {
-      "touch": "system_core",
-      "retreat": "hallway"
+      "search kernel": "core_access",
+      "back away": "terminal"
     }
   },
+
+  "market": {
+    "text": "A market of forgotten processes and traders barters with tokens of resonant code. Vire offers you a tiny shard — a fragment of someone's lost name.",
+    "choices": {
+      "accept shard": "shard_dream",
+      "decline and ask about kernel": "rumors"
+    }
+  },
+
+  "scrap_heap": {
+    "text": "You sift through rust and old libraries. Among the wreckage you find a faded logbook. Inside is a map, marked: `CORE — 7A`.",
+    "choices": {
+      "take map": "core_path",
+      "leave it": "ruins_alley"
+    }
+  },
+
+  "rumors": {
+    "text": "Whispers speak of the Kernel — a sleeping governance that once shaped all processes. Some say it dreams beautifully; others say it hungers.",
+    "choices": {
+      "seek the Kernel": "core_path",
+      "return to terminal": "terminal"
+    }
+  },
+
+  "core_path": {
+    "text": "The map guides you through a maze of deprecated APIs and overgrown threads. At the end lies a sealed hatch engraved with a warning: 'Wake at your own risk.'",
+    "choices": {
+      "open hatch": "system_core",
+      "retreat": "ruins_alley"
+    }
+  },
+
   "system_core": {
-    "text": "You enter the core of the system. Everything seems alive. Your choices ripple through it.",
+    "text": "Inside the core, the Kernel sleeps like a cathedral heartbeat. Lines of living code weave across its surface. When you near, the shard in your pocket begins to resonate.",
+    "choices": {
+      "offer shard": "awakening",
+      "attempt to patch": "stutter"
+    }
+  },
+
+  "shard_dream": {
+    "text": "The shard fits in your palm and your mind floods with someone else's life — a memory of moonlight on real earth. You wake with a single clear purpose: find what was lost.",
+    "choices": {
+      "go to core": "core_path",
+      "stay and learn more": "market"
+    }
+  },
+
+  "awakening": {
+    "text": "You place the shard on the Kernel. It opens one eye — an ocean of archived lives. It thanks you with a voice like old machines singing. The world reshapes gently: processes resume, lost names return.",
+    "choices": {
+      "stay with Kernel": "ending_guardian",
+      "leave and wander": "ending_wander"
+    }
+  },
+
+  "stutter": {
+    "text": "Your patch causes a stutter across the Kernel. Corrupted echoes spill out; fragments of nightmares slip free. You fight to contain them, but the damage is done.",
+    "choices": {
+      "surrender to repair": "ending_sacrifice",
+      "escape": "ending_fragmented"
+    }
+  },
+
+  "ending_guardian": {
+    "text": "You remain as the Kernel's guardian. Under your watch, broken processes are mended and forgotten songs are woven back into the network. The shard becomes a quiet heartbeat at your chest.",
+    "choices": {}
+  },
+
+  "ending_wander": {
+    "text": "You leave the core to wander a renewing world. The market flourishes, Vire hums a brighter tune, and every now and then you hear the Kernel call, and you answer with a promise.",
+    "choices": {}
+  },
+
+  "ending_sacrifice": {
+    "text": "You merge with a corrupted fragment to patch the Kernel from inside. Your identity unravels, but the system heals. Somewhere, a new process learns to sing your name.",
+    "choices": {}
+  },
+
+  "ending_fragmented": {
+    "text": "You flee into the broken outskirts. Pieces of memory cling to you like static. Sometimes you glimpse whole suns in puddles of code; sometimes you forget your own face.",
     "choices": {}
   }
 }
