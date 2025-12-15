@@ -14,3 +14,10 @@ start - begin the story <br>
 save - save progress <br>
 load - load previous save <br>
 exit - quit the game <br>
+
+  ____        _        __     _ _       <br>
+ | __ ) _   _| |_ ___  \ \   (_) | ___  <br>
+ |  _ \| | | | __/ _ \  \ \  | | |/ _ \ <br>
+ | |_) | |_| | ||  __/  / /__| | |  __/ <br>
+ |____/ \__,_|\__\___| /_____|_|_|\___| <br> <br>
+    ByteVile Alpha Dev Version 1.1
