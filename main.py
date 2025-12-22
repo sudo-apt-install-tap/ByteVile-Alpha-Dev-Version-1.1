@@ -1,6 +1,7 @@
 import Utils.engine as engine
 import Utils.save_system as save
 import Utils.textfx as fx
+import Utils.worldgen as rng
 
 def main():
     fx.clear()
