@@ -1,7 +1,7 @@
 import Utils.engine as engine
 import Utils.save_system as save
 import Utils.textfx as fx
-import Utils.worldgen as rng
+from Utils.procgen import generate_world, print_world
 
 def main():
     fx.clear()
@@ -37,3 +37,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+elif choice == "world":
+    world = generate_world(40, 20)
+    print_world(world)
