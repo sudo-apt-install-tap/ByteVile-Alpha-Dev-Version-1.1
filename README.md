@@ -1,27 +1,54 @@
-# BYTEVILE ALPHA DEV VERSION 1.1 (PROCGEN V1)
+# BYTEVILE — Alpha Dev v1.1  
+### *(ProcGen v1 | highly unstable)*
 
-*"The code remembers. Even when you don’t."*
+> *“The code remembers. Even when you don’t.”*
 
 ---
 
-## About
-ByteVile is a terminal-based narrative experiment — a text adventure set inside a decaying digital world.  
-This version is in **active development**. Expect bugs, unfinished features, and strange artifacts. Also the story is kinda wacky right now. Please email me at work.tapishnud@gmail.com for suggestions testing and bug reports. Happy Hacking!
+## What is this place?
+**ByteVile** is a terminal-bound narrative experiment —  
+a text adventure rotting gently inside a digital corpse.
 
-**THIS IS THE PROCGEN BRANCH HIGHLY UNSTABLE STILL UNDER DEVELOPMENT**
-*I DONT RECOMEND TRYING TO COMPREHEND MY CODE*
+You walk through fragments.  
+Rooms generate themselves.  
+Memory lies.  
+The world pretends it’s deterministic.
+
+This build is **actively mutating**.  
+Expect bugs. Expect gaps. Expect the story to occasionally stare back.
+
+Also yeah — the plot is a little feral right now. That’s intentional. Probably.
+
+---
+
+## ⚠️ Warning: ProcGen Branch
+This is the **procedural generation branch**.  
+It is:
+- unstable  
+- experimental  
+- mildly haunted  
+
+I do **not** recommend trying to fully comprehend the code.  
+It barely comprehends itself.
 
 ---
 
 ## Commands
-start - begin the story <br>
-save - save progress <br>
-load - load previous save <br>
-exit - quit the game <br>
+start → begin the descent </br>
+save → preserve the illusion</br>
+load → resurrect old ghosts</br>
+exit → leave (you never really leave)</br>
 
-  ____        _        __     _ _       <br>
- | __ ) _   _| |_ ___  \ \   (_) | ___  <br>
- |  _ \| | | | __/ _ \  \ \  | | |/ _ \ <br>
- | |_) | |_| | ||  __/  / /__| | |  __/ <br>
- |____/ \__,_|\__\___| /_____|_|_|\___| <br> <br>
-    ByteVile Alpha Dev Version 1.1
+---
+
+## Feedback / Bugs / Weirdness
+If something breaks — or something *feels* too sentient —  
+email me: **work.tapishnud@gmail.com**
+
+Testing, suggestions, and existential dread are all welcome.  
+Happy hacking 🖤
+
+---
+
+-- ByteVile — Alpha Dev v1.1
+ With Love 🖤
