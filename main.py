@@ -1,42 +1,75 @@
-import Utils.engine as engine
-import Utils.save_system as save
-import Utils.textfx as fx
-from Utils.procgen import generate_world, print_world
+import os
+import sys
+import tty
+import termios
+
+from Utils import world, movement, textfx, procgen
+
+# Terminal input
+
+def getch():
+    """
+    Reads single charecters from stdin
+    """
+    fd = sys.stdin.fileno()
+    old_settings = termios.tcgetattr(fd)
+    try:
+        tty.setraw(fd)
+        ch = sys.stdin.read(1)
+    finally:
+        termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+    return ch
+
+# Render world
+
+def render(world_state):
+    os.system("clear")
+    wmap = [list(row) for row in world_state["map"]]
+
+    px = world_state["player"]["x"]
+    py = world_state["player"]["y"]
+    wmap[py][px]="@"
+
+    for row in wmap:
+        print("".join(row))
+
+# Direction Mapping
+
+DIRECTION ={
+    "w": (0,-1),
+    "s": (0,1),
+    "a": (-1,0),
+    "d": (1,0)
+}
+
+# Main Loop
 
 def main():
-    fx.clear()
-    fx.banner()
-    print("ByteVile Alpha Dev Version 1.1\n")
-    print("Welcome back, wanderer. The system remembers you.\n")
+    world_state=world.create_world()
 
-    save.init_save_dir()
+    textfx.slow_print("> Welcome toByteVile. Use WASD to move. Press Q to quit")
 
     while True:
-        choice = input(">> ").strip().lower()
+        render(world_state)
+        key = getch().lower()
 
-        if choice in ["exit", "quit"]:
-            print("\nShutting down... see you next boot.\n")
+        if key == "q":
+            textfx.slow_print("\n> Shutting down........\n")
             break
 
-        elif choice == "start":
-            engine.start_game()
+        if key not in DIRECTION:
+            continue
 
-        elif choice == "load":
-            data = save.load_game()
-            if data:
-                print("Loaded previous state.")
-            else:
-                print("No save file found.")
+        dx, dy = DIRECTION[key]
+        result = movement.attempt_move(world_state, world_state["player"], dx, dy)
 
-        elif choice == "save":
-            save.save_game({"example": "game_state"})
-            print("Game saved.")
-        
-        elif choice == "world":
-            world = generate_world(40, 20)
-            print_world(world)
-        else:
-            print("Commands: start | save | load | exit")
+        # POI E.G
 
-if __name__ == "__main__":
+        if result["tile"] == "~" and result["moved"]:
+            textfx.slow_print("> You step into cold water. \n")
+
+# Entrypoint
+
+if __name__=="__main__":
     main()
+    
