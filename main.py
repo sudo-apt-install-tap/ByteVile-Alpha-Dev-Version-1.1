@@ -31,13 +31,12 @@ def main():
         elif choice == "save":
             save.save_game({"example": "game_state"})
             print("Game saved.")
-
+        
+        elif choice == "world":
+            world = generate_world(40, 20)
+            print_world(world)
         else:
             print("Commands: start | save | load | exit")
 
 if __name__ == "__main__":
     main()
-
-elif choice == "world":
-    world = generate_world(40, 20)
-    print_world(world)
