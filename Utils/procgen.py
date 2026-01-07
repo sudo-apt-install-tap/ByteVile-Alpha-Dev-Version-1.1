@@ -1,8 +1,10 @@
 import random
+import time
 
-#tiles and seed config!!
-
-worldseed = 1337
+# tiles and seed config
+# World seed computed from current time (seconds) as requested:
+# seed = int(current_time_seconds) * 8096 - 10000
+worldseed = int(time.time()) * 8096 - 10000
  
 WALL = "#"
 FLOOR = '.'
@@ -68,6 +70,26 @@ def generate_world(width, height, num_rooms=5):
             r = _rng(x, y)
             if world[y][x] == FLOOR and r.random() < 0.1:
                 world[y][x] = WATER
+
+    # Place doors deterministically per-tile using the same _rng style as water
+    # Doors will replace FLOOR tiles with a small probability.
+    door_prob = 0.05
+    door_count = 0
+    for y in range(height):
+        for x in range(width):
+            r = _rng(x, y)
+            if world[y][x] == FLOOR and r.random() < door_prob:
+                world[y][x] = DOOR
+                door_count += 1
+
+    # Ensure at least one door exists: pick a deterministic floor tile if none placed
+    if door_count == 0:
+        # deterministic RNG seeded by worldseed
+        fallback_rng = random.Random(worldseed)
+        floor_positions = [(x, y) for y, row in enumerate(world) for x, t in enumerate(row) if t == FLOOR]
+        if floor_positions:
+            fx, fy = fallback_rng.choice(floor_positions)
+            world[fy][fx] = DOOR
 
     return world
 

@@ -1,0 +1,6 @@
+[
+  {"id": "terminal", "name": "Flickering Terminal", "text": "A terminal pulses with a flashing line: INIT: REMEMBER.", "story_node": "terminal", "once": false},
+  {"id": "scrap_heap", "name": "Scrap Heap", "text": "A pile of scrap and a torn logbook peek through the rubble.", "story_node": "scrap_heap", "once": true},
+  {"id": "warning_hatch", "name": "Sealed Hatch", "text": "A hatch engraved with: 'Wake at your own risk.'", "story_node": "core_path", "once": true},
+  {"id": "example_fixed", "name": "Marked Stone", "text": "A carved stone that someone has clearly marked.", "story_node": null, "once": false, "x": 1, "y": 1}
+]

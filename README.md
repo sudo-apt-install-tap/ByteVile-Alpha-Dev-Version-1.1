@@ -52,3 +52,24 @@ Happy hacking 🖤
 
 -- ByteVile — Alpha Dev v1.1
  With Love 🖤
+
+---
+
+## 🔧 Adding POIs (Points of Interest)
+
+You can add in-game POIs by editing `Data/pois.json`. Each POI entry is a JSON object with fields:
+
+- `id` (string): short identifier
+- `name` (string): display name
+- `text` (string): the text shown when the player reaches the POI
+- `story_node` (string|null): optional link to a story node in `Data/story.json`
+- `once` (bool): if true, the POI is removed after being triggered
+- `x`, `y` (ints, optional): optional fixed coordinates; if omitted (or invalid), the POI will be auto-placed on a floor tile
+
+If you don't add `Data/pois.json`, the game will place a few example POIs automatically.
+
+Example entry:
+
+```json
+{ "id": "terminal", "name": "Flickering Terminal", "text": "A terminal pulses...", "story_node": "terminal", "once": false }
+```
