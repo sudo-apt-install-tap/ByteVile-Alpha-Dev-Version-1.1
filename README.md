@@ -1,5 +1,5 @@
 # BYTEVILE — Alpha Dev v1.1  
-### *(ProcGen v1 | highly unstable)*
+### *Damnation*
 
 > *“The code remembers. Even when you don’t.”*
 
