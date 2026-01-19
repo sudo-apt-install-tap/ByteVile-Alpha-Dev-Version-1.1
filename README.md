@@ -10,8 +10,12 @@
 This is a standalone Linux build.  
 No setup. No Python. No excuses.
 
+## Requirement
+
+Use a distro with glibc ≥ 2.42
+
 Download the latest release from:  
-**https://github.com/YOURNAME/ByteVile/releases**
+**https://github.com/sudo-apt-install-tap/ByteVile-Alpha-Dev-Version-1.1/releases/tag/V1.1**
 
 Extract and run:
 
